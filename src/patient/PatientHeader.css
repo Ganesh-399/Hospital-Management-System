@@ -1,0 +1,283 @@
+/* ================= PATIENT HEADER ================= */
+/* Industrial-Level Navigation - Matching Component Classes */
+
+/* ================= TOP BAR ================= */
+.topbar-enhanced {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.topbar-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= LOGO SECTION ================= */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 28px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #ffffff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+/* ================= TOP BAR RIGHT ================= */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ================= PROFILE DROPDOWN ================= */
+.profile-dropdown-enhanced {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.profile-dropdown-enhanced:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.avatar-enhanced {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-dropdown-enhanced:hover .avatar-enhanced {
+  transform: scale(1.05);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-enhanced {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.user-role {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dropdown-arrow {
+  color: rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.profile-dropdown-enhanced:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* ================= DROPDOWN MENU ================= */
+.dropdown-menu-enhanced {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 260px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  z-index: 200;
+}
+
+.profile-dropdown-enhanced:hover .dropdown-menu-enhanced {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.dropdown-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdown-user-info strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dropdown-user-info span {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: #f1f5f9;
+  color: #667eea;
+}
+
+.dropdown-item .item-icon {
+  font-size: 18px;
+}
+
+.logout-item {
+  color: #dc2626;
+}
+
+.logout-item:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* ================= DASHBOARD HEADER ================= */
+.dashboard-header-enhanced {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 32px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-header-enhanced::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.dashboard-header-enhanced::after {
+  content: '';
+  position: absolute;
+  bottom: -60%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header-text h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.header-text p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .topbar-content {
+    padding: 12px 16px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .profile-dropdown-enhanced {
+    padding: 6px 10px;
+  }
+
+  .dashboard-header-enhanced {
+    padding: 24px 16px;
+  }
+
+  .header-text h1 {
+    font-size: 24px;
+  }
+
+  .header-text p {
+    font-size: 14px;
+  }
+
+  .dropdown-menu-enhanced {
+    width: 240px;
+    right: -20px;
+  }
+}

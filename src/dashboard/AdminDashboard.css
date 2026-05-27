@@ -1,0 +1,355 @@
+/* ================= GLOBAL DASHBOARD STYLES ================= */
+.dashboard {
+  padding: 2rem;
+  background: #f8f9fc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* ================= STATS GRID ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  opacity: 0.08;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ================= GRADIENT VARIATIONS (matching header theme) ================= */
+.gradient-blue {
+  border-left-color: #6366f1;
+}
+
+.gradient-blue::before {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.gradient-blue p {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-purple {
+  border-left-color: #a855f7;
+}
+
+.gradient-purple::before {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.gradient-purple p {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-pink {
+  border-left-color: #f43f5e;
+}
+
+.gradient-pink::before {
+  background: linear-gradient(135deg, #f43f5e, #fb923c);
+}
+
+.gradient-pink p {
+  background: linear-gradient(135deg, #f43f5e, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ================= CHARTS GRID ================= */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.chart-card h4 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.chart-wrapper {
+  height: 300px;
+  position: relative;
+}
+
+/* ================= RECENT APPOINTMENTS TABLE ================= */
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.admin-table thead {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.admin-table thead th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+.admin-table thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.admin-table thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.admin-table tbody tr {
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.admin-table tbody tr:hover {
+  background: #f1f5f9;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.admin-table tbody td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.admin-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.admin-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status badge styling */
+.admin-table tbody td:last-child {
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-card p {
+    font-size: 2rem;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    padding: 1.25rem;
+  }
+
+  .chart-wrapper {
+    height: 250px;
+  }
+
+  .admin-table {
+    font-size: 0.8rem;
+  }
+
+  .admin-table thead th,
+  .admin-table tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .stat-card h4 {
+    font-size: 0.8rem;
+  }
+
+  .stat-card p {
+    font-size: 1.75rem;
+  }
+
+  .chart-card h4 {
+    font-size: 1rem;
+  }
+
+  .chart-wrapper {
+    height: 220px;
+  }
+
+  /* Make table scrollable on small screens */
+  .chart-card:has(.admin-table) {
+    overflow-x: auto;
+  }
+
+  .admin-table {
+    min-width: 600px;
+  }
+}
+
+/* ================= SMOOTH ANIMATIONS ================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.chart-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.stat-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.chart-card:nth-child(1) {
+  animation-delay: 0.35s;
+}
+
+.chart-card:nth-child(2) {
+  animation-delay: 0.45s;
+}
+
+.chart-card:nth-child(3) {
+  animation-delay: 0.55s;
+}
+
+/* ================= LOADING STATE (Optional) ================= */
+.stat-card.loading,
+.chart-card.loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.stat-card.loading::after,
+.chart-card.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border: 3px solid #667eea;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

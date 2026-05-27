@@ -1,0 +1,556 @@
+/* ================= PATIENT DASHBOARD ================= */
+/* Industrial-Level Dashboard Design */
+
+/* ================= MAIN CONTAINER ================= */
+.patient-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ================= STATS GRID ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 0 32px 32px;
+  max-width: 1400px;
+  margin: -24px auto 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* ================= STAT CARD ================= */
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-card h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-top: 12px;
+  letter-spacing: -1px;
+}
+
+/* Stat Card Colors */
+.stat-card.blue::before {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.stat-card.blue h2 {
+  color: #3b82f6;
+}
+
+.stat-card.orange::before {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.stat-card.orange h2 {
+  color: #f59e0b;
+}
+
+.stat-card.purple::before {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.stat-card.purple h2 {
+  color: #8b5cf6;
+}
+
+.stat-card.green::before {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-card.green h2 {
+  color: #10b981;
+}
+
+/* ================= TABLE HEADER ================= */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.table-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.book-btn {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.45);
+}
+
+/* ================= TABLE CONTAINER ================= */
+.table-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px 40px;
+}
+
+.table-container table {
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Table Header */
+.table-container thead {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.table-container thead th {
+  padding: 18px 24px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Body */
+.table-container tbody tr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table-container tbody tr:hover {
+  background: #f8fafc;
+}
+
+.table-container tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table-container tbody td {
+  padding: 18px 24px;
+  font-size: 15px;
+  color: #475569;
+}
+
+.table-container tbody td.empty {
+  text-align: center;
+  padding: 48px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ================= STATUS BADGES ================= */
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status.pending {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+}
+
+.status.pending::before {
+  background: #f59e0b;
+}
+
+.status.approved {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+}
+
+.status.approved::before {
+  background: #3b82f6;
+}
+
+.status.completed,
+.status.paid {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+}
+
+.status.completed::before,
+.status.paid::before {
+  background: #10b981;
+}
+
+.status.declined,
+.status.cancelled {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+}
+
+.status.declined::before,
+.status.cancelled::before {
+  background: #ef4444;
+}
+
+/* ================= PAY BUTTON ================= */
+.pay-btn {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* ================= PAID BADGE ================= */
+.paid-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 20px 24px;
+  }
+
+  .table-header,
+  .table-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    margin-top: -16px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-card h2 {
+    font-size: 32px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .book-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .table-container table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .table-container thead th,
+  .table-container tbody td {
+    padding: 14px 16px;
+    white-space: nowrap;
+  }
+}
+
+/* ================= VIEW DETAILS BUTTON ================= */
+.view-details-btn {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.view-details-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ================= PRESCRIPTION MODAL ================= */
+.prescription-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.prescription-modal {
+  background: white;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.prescription-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 24px 24px 0 0;
+}
+
+.prescription-modal-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prescription-modal-header .close-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.prescription-modal-header .close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.prescription-modal-body {
+  padding: 28px;
+}
+
+.prescription-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.prescription-info-row:last-of-type {
+  border-bottom: none;
+  margin-bottom: 8px;
+}
+
+.info-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.prescription-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.prescription-section:last-child {
+  margin-bottom: 0;
+}
+
+.prescription-section h3 {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prescription-section p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #475569;
+  white-space: pre-wrap;
+}
+
+.prescription-modal-footer {
+  padding: 20px 28px 28px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.close-modal-btn {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Prescription Modal Responsive */
+@media (max-width: 480px) {
+  .prescription-modal {
+    max-width: 100%;
+    border-radius: 20px;
+  }
+
+  .prescription-modal-header {
+    padding: 20px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .prescription-modal-header h2 {
+    font-size: 18px;
+  }
+
+  .prescription-modal-body {
+    padding: 20px;
+  }
+
+  .prescription-section {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,330 @@
+/* ================= DOCTOR DASHBOARD STYLES ================= */
+.doctor-dashboard {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* ================= HEADER ================= */
+.dashboard-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.header-content p {
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+/* ================= STATS GRID ================= */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.stat-card .label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    margin: 0;
+}
+
+.stat-card .value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0.5rem 0 0;
+    line-height: 1;
+}
+
+/* Card Color Variants */
+.stat-card.purple::before {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.stat-card.purple .value {
+    color: #667eea;
+}
+
+.stat-card.orange::before {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+.stat-card.orange .value {
+    color: #f59e0b;
+}
+
+.stat-card.blue::before {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.stat-card.blue .value {
+    color: #3b82f6;
+}
+
+.stat-card.green::before {
+    background: linear-gradient(135deg, #10b981, #22c55e);
+}
+
+.stat-card.green .value {
+    color: #10b981;
+}
+
+.stat-card.pink::before {
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+}
+
+.stat-card.pink .value {
+    color: #ec4899;
+}
+
+.stat-card.teal::before {
+    background: linear-gradient(135deg, #14b8a6, #0891b2);
+}
+
+.stat-card.teal .value {
+    color: #14b8a6;
+}
+
+/* ================= CHARTS SECTION ================= */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.chart-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.chart-card h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-card h3 .chart-icon {
+    font-size: 1.25rem;
+}
+
+.chart-container {
+    height: 300px;
+    width: 100%;
+}
+
+/* ================= FULL WIDTH CHART ================= */
+.full-width-chart {
+    grid-column: 1 / -1;
+}
+
+/* ================= LOADING STATE ================= */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    color: #64748b;
+}
+
+.loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card,
+.chart-card {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.stat-card:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.stat-card:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.chart-card:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.chart-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.chart-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width-chart {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-dashboard {
+        padding: 1rem;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.25rem;
+    }
+
+    .stat-card .value {
+        font-size: 1.75rem;
+    }
+
+    .stat-card .icon {
+        font-size: 2rem;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .charts-section {
+        gap: 1rem;
+    }
+
+    .chart-card {
+        padding: 1.25rem;
+    }
+
+    .chart-container {
+        height: 220px;
+    }
+}

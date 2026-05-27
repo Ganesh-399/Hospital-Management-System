@@ -1,0 +1,196 @@
+/* --- Variables & Reset --- */
+:root {
+  --primary-color: #2563eb; /* Consistent Blue */
+  --primary-hover: #1d4ed8;
+  --bg-page: #f3f4f6;
+  --bg-card: #ffffff;
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --focus-ring: rgba(37, 99, 235, 0.2);
+}
+
+/* --- Main Layout --- */
+.profile-wrapper {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background-color: var(--bg-page);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-card {
+  background: var(--bg-card);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 40px;
+}
+
+/* --- Header --- */
+.card-header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 20px;
+}
+
+.card-header h2 {
+  font-size: 26px;
+  color: var(--text-dark);
+  margin: 0 0 8px 0;
+}
+
+.card-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* --- Typography --- */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  background-color: var(--primary-color);
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+/* --- Grid System --- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 24px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+/* --- Form Elements --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+/* Styling for Input, Select, and Textarea */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background-color: #fff;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing only */
+  min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--focus-ring);
+}
+
+.input-disabled {
+  background-color: #f9fafb !important;
+  color: #9ca3af;
+  cursor: not-allowed;
+  border-color: #f3f4f6;
+}
+
+/* --- Buttons --- */
+.action-row {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.btn-secondary {
+  background-color: #374151;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1f2937;
+}
+
+/* --- Dividers & Security --- */
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 35px 0;
+}
+
+.security-section {
+  background-color: #f8fafc;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+}
